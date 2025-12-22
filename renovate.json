@@ -17,6 +17,31 @@
   "packageRules": [
     {
       "description": [
+        "Deps that don't fit into another group"
+      ],
+      "matchFileNames": [
+        "web/**"
+      ],
+      "groupName": "web-kitchen-sink",
+      "extends": [
+        "schedule:weekly"
+      ],
+      "addLabels": [
+        "target:web",
+        "type:internal"
+      ],
+       "matchDatasources": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "/.*/"
+      ],
+      "separateMajorMinor": false,
+      "minimumReleaseAge": "14 days",
+    "internalChecksFilter": "strict"
+    },
+    {
+      "description": [
         "Group all the web eslint and type packages together"
       ],
       "matchFileNames": [
